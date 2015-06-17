@@ -10,7 +10,7 @@ String.prototype.toCamelCase = function() {
 				upperCased += words[i][y];
 			}
 		}
-		upperCased += ' ';	
+		upperCased += ' ';//REFACTOR this to not need the additional space	
 	}//adding too many spaces, that's why the lengths don't add up	
 	return trim(upperCased);
 }
