@@ -101,6 +101,14 @@ bignum.append(72107838435069186155435662884062257473692284509516)
 bignum.append(20849603980134001723930671666823555245252804609722)
 bignum.append(53503534226472524250874054075591789781264330331690)
 
+bigSum = 0
 
+bigSum = sum(bignum)
+
+print str(bigSum)[0:10]
+
+
+"""
 for i in xrange(len(bignum)):
-	print i, len(str(bignum[i]))
+	bignum 
+"""
