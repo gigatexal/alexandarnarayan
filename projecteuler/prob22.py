@@ -1,3 +1,6 @@
+"""
+https://projecteuler.net/problem=22
+"""
 
 with open('names.txt','r') as names:
 	data = names.read()
