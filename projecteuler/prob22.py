@@ -17,8 +17,8 @@ sanitized = sorted(str(data).replace('"','').split(','))
 
 scores = 0
 
-for i,name in enumerate(sanitized):
-	#print (i+1), name, numerics(name), (i+1) * numerics(name)
-	scores += (i+1) * numerics(name)	
+for i,name in enumerate(sanitized, start=1):
+	#print (i), name, numerics(name), (i) * numerics(name)
+	scores += (i) * numerics(name)	
 
 print scores
