@@ -14,6 +14,8 @@ if __name__ == '__main__':
 
 import multiprocessing as mp
 import time as time
+import random as rnd
+
 
 def checkNum(q):
 	num = q.get()
@@ -21,27 +23,24 @@ def checkNum(q):
 		print 'num was %d and is even', num
 	
 def populateQueue(q):
-	while True:
-		q.put(2)	
+	mult = int(q.get())
+	for i in xrange(11):
+		q.put(i) * mult
+	q.close()
 
 if __name__ == '__main__':
+	
 	manager = mp.Manager()
 	queue = manager.Queue()
-	pool = mp.Pool(processes=1)
-	result = pool.apply(populateQueue,(queue,))	
-
-	pool_a = mp.Pool(processes=12)
 	
-	pool.start()
-	pool.join()
+	pool = mp.Pool(processes=4)
 
-	pool_a.start()
-	pool_a.join()
+	pool.apply_async(populateQueue, (queue,))
 
-	
-	result_a = pool.apply_async(checkNum,(queue,))
-	print result_a.get()
-	
 	while True:
-		print queue.qsize()		
+		print queue.get()
+		if queue.qsize() == 0:
+			break
+
+
 	
