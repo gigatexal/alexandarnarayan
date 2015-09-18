@@ -43,7 +43,8 @@ public class HelloWorld extends PApplet
 
 		// This sets the background color for the Applet.  
 		// Play around with these numbers and see what happens!
-		this.background(200, 200, 200);
+		//this.background(200, 200, 200);
+		this.background(144,212,149);
 		
 		// Select a map provider
 		AbstractMapProvider provider = new Google.GoogleTerrainProvider();
@@ -54,7 +55,7 @@ public class HelloWorld extends PApplet
 			// If you are working offline, you need to use this provider 
 			// to work with the maps that are local on your computer.  
 			provider = new MBTilesMapProvider(mbTilesString);
-			// 3 is the maximum zoom level for working offline
+			// 3 is the maximum zoom level for working offlin17e
 			zoomLevel = 3;
 		}
 		
@@ -65,15 +66,17 @@ public class HelloWorld extends PApplet
 		// The 6th argument specifies the map provider.  
 		// There are several providers built-in.
 		// Note if you are working offline you must use the MBTilesMapProvider
-		map1 = new UnfoldingMap(this, 50, 50, 350, 500, provider);
-
+		map1 = new UnfoldingMap(this, 35, 50, 350, 500, provider);//was 50,50,350,500
+		map2 = new UnfoldingMap(this, 415, 50, 350, 500, provider);
 		// The next line zooms in and centers the map at 
 	    // 32.9 (latitude) and -117.2 (longitude)
 	    map1.zoomAndPanTo(zoomLevel, new Location(32.9f, -117.2f));
-		
+	    //north lombard portland oregon
+	    map2.zoomAndPanTo(zoomLevel, new Location(45.58f,-122.73f));
+	    
 		// This line makes the map interactive
 		MapUtils.createDefaultEventDispatcher(this, map1);
-		
+	    MapUtils.createDefaultEventDispatcher(this, map2);
 		// TODO: Add code here that creates map2 
 		// Then you'll modify draw() below
 
@@ -84,6 +87,7 @@ public class HelloWorld extends PApplet
 		// So far we only draw map1...
 		// TODO: Add code so that both maps are displayed
 		map1.draw();
+		map2.draw();
 	}
 
 	
