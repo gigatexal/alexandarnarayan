@@ -1,0 +1,23 @@
+package testing;
+
+
+public class varTrace {
+	
+	public static void main(String[] args)
+	{
+	
+	}
+}
+	
+	public class SimpleLocation
+	{
+		public double lat;
+		public double lon;
+		
+		public SimpleLocation(double latIn, double lonIn)
+		{
+			this.lat = latIn;
+			this.lon = lonIn;
+		}
+	}
+	

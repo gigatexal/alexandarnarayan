@@ -1,0 +1,21 @@
+
+
+package week2;
+
+import processing.core.*;
+
+
+public class HelloGUI extends PApplet{
+	private String URL = "http://www.lajollabythesea.com/uploads/media_items/sea-gull-at-windansea.0.194.1652.1267.440.338.c.jpg";
+	private PImage bkgrndImage;
+		
+	public void setup() {
+		
+		bkgrndImage = loadImage(URL,"jpg");
+		size(bkgrndImage.height,bkgrndImage.width);
+	}
+	
+	public void draw(){
+	
+	}
+}

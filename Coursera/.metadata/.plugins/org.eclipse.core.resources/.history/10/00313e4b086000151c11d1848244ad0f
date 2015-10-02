@@ -1,0 +1,24 @@
+package testing;
+
+
+public class varTrace {
+	
+	public class SimpleLocation
+	{
+		public double lat;
+		public double lon;
+		
+		public SimpleLocation(double latIn, double lonIn)
+		{
+			this.lat = latIn;
+			this.lon = lonIn;
+		}
+	}
+	
+	public static void main (String[] args){
+		
+		SimpleLocation lima = new SimpleLocation(-12.04,-77.0);
+		
+	}		
+	
+}

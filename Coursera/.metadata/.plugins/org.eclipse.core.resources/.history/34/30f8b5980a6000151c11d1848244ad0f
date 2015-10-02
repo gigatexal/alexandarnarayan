@@ -1,0 +1,16 @@
+package testing;
+
+
+public class varTrace {
+	
+	public static void main(String[] args)
+	{
+		SimpleLocation lima = new SimpleLocation(-12.04,-77.0);
+		SimpleLocation lima1 = new SimpleLocation(-12.05,-77.0);
+		lima = lima1;
+		lima.lat = 18;
+		System.out.println(lima.lat);
+	}
+}
+	
+

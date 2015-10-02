@@ -1,0 +1,17 @@
+
+
+package week2;
+
+import processing.core.*;
+
+
+public class HelloGUI extends PApplet{
+
+	public void setup() {
+		size(200,200);
+	}
+	
+	public void draw(){
+		
+	}
+}
