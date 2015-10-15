@@ -33,7 +33,7 @@ public class EarthquakeCityMap extends PApplet {
 	
 	// You can ignore this.  It's to get rid of eclipse warnings
 	private static final long serialVersionUID = 1L;
-
+	
 	// IF YOU ARE WORKING OFFILINE, change the value of this variable to true
 	private static final boolean offline = false;
 	
@@ -62,7 +62,9 @@ public class EarthquakeCityMap extends PApplet {
 	private CommonMarker lastSelected;
 	private CommonMarker lastClicked;
 	
-	public void setup() {		
+	public void setup() {
+		
+		earthquakesURL = "quiz1.atom";
 		// (1) Initializing canvas and map tiles
 		size(900, 700, OPENGL);
 		if (offline) {

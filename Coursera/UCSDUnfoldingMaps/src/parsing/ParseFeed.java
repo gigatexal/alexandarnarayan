@@ -54,7 +54,7 @@ public class ParseFeed {
 
 				// Sets depth(elevation) if existing
 				float depthVal = getFloatVal(itemXML[i], "georss:elev");
-				
+				//float depthVal = getFloatVal(itemXML[i], "georss:point");
 				// NOT SURE ABOUT CHECKING ERR CONDITION BECAUSE 0 COULD BE VALID?
 				// get one decimal place when converting to km
 				int interVal = (int)(depthVal/100);

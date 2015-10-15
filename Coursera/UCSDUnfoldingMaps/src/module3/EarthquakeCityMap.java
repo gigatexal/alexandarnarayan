@@ -1,18 +1,18 @@
 package module3;
 
 //Java utilities libraries
-import java.util.ArrayList;
 //import java.util.Collections;
 //import java.util.Comparator;
-import java.util.List;
+import java.util.*;
 
 //Processing library
 import processing.core.PApplet;
-
+import processing.data.XML;
 //Unfolding libraries
 import de.fhpotsdam.unfolding.UnfoldingMap;
 import de.fhpotsdam.unfolding.marker.Marker;
 import de.fhpotsdam.unfolding.data.PointFeature;
+import de.fhpotsdam.unfolding.geo.Location;
 import de.fhpotsdam.unfolding.marker.SimplePointMarker;
 import de.fhpotsdam.unfolding.providers.Google;
 import de.fhpotsdam.unfolding.providers.MBTilesMapProvider;
@@ -24,7 +24,7 @@ import parsing.ParseFeed;
 /** EarthquakeCityMap
  * An application with an interactive map displaying earthquake data.
  * Author: UC San Diego Intermediate Software Development MOOC team
- * @author Your name here
+ * @author Alex N
  * Date: July 17, 2015
  * */
 public class EarthquakeCityMap extends PApplet {
@@ -64,22 +64,34 @@ public class EarthquakeCityMap extends PApplet {
 		}
 		
 	    map.zoomToLevel(2);
+	    
+	    
 	    MapUtils.createDefaultEventDispatcher(this, map);	
 			
 	    // The List you will populate with new SimplePointMarkers
 	    List<Marker> markers = new ArrayList<Marker>();
+	    
 
 	    //Use provided parser to collect properties for each earthquake
 	    //PointFeatures have a getLocation method
 	    List<PointFeature> earthquakes = ParseFeed.parseEarthquake(this, earthquakesURL);
+	    int c = 0;
+	    for (PointFeature p: earthquakes){
+	    	c++;
+	    	System.out.println(c);
+	    }
 	    
 	    // These print statements show you (1) all of the relevant properties 
 	    // in the features, and (2) how to get one property and use it
+	    
 	    if (earthquakes.size() > 0) {
 	    	PointFeature f = earthquakes.get(0);
-	    	System.out.println(f.getProperties());
+	    	
+	    	//System.out.println(f.getProperties());
 	    	Object magObj = f.getProperty("magnitude");
 	    	float mag = Float.parseFloat(magObj.toString());
+	    	
+	    	
 	    	// PointFeatures also have a getLocation method
 	    }
 	    
@@ -88,6 +100,7 @@ public class EarthquakeCityMap extends PApplet {
 	    int yellow = color(255, 255, 0);
 	    
 	    //TODO: Add code here as appropriate
+	    
 	}
 		
 	// A suggested helper method that takes in an earthquake feature and 
@@ -98,6 +111,8 @@ public class EarthquakeCityMap extends PApplet {
 		// finish implementing and use this method, if it helps.
 		return new SimplePointMarker(feature.getLocation());
 	}
+	
+	
 	
 	public void draw() {
 	    background(10);

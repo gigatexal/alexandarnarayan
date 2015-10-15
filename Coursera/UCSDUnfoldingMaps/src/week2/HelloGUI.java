@@ -1,26 +1,37 @@
 
 
 package week2;
+//color 255, 209, 0
 
-import java.awt.Image;
 
 import processing.core.*;
+import java.util.*;
 
 public class HelloGUI extends PApplet {
 	private String URL = "http://funflightscom.c.presscdn.com/wp-content/uploads/2014/04/LaJolla.jpg";
 	private PImage bkgrndImage;	
+	
+	
 	public void setup() {
 		
 		bkgrndImage = loadImage(URL,"jpg");
-		size(400,400);
+		size(bkgrndImage.width/2,bkgrndImage.height/2);
 		
 	}
 	
 	public void draw(){
-		bkgrndImage.resize(0, height);
-		image(bkgrndImage,0,0);
+		Date currDate = new Date();
+		String currentDate = currDate.toString();
 		
-		ellipse(50,50,100,100);
+		bkgrndImage.resize(width, height);
+		image(bkgrndImage,0,0);
+		fill(255,209,0);
+		ellipse(width/4,width/4,height/5,height/5);
+		
+		System.out.println(currentDate);
+
+		
+		
 		
 	}
 }
