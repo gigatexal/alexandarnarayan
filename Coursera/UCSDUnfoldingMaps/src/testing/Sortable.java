@@ -1,7 +1,9 @@
-package testing;
+/*
+ * package testing;
+
 import java.util.*;
 
-public class SortTest {
+public class Sortable {
 	public void main(String args[]) {
 		
 		ArrayList<Animal> animals = new ArrayList();
@@ -54,3 +56,4 @@ class Animal implements Comparable<Animal>{
 		
 	}
 }
+*/

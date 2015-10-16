@@ -28,6 +28,25 @@ public class OceanQuakeMarker extends EarthquakeMarker {
 		// and how it is set in the EarthquakeMarker constructor
 		pg.rect(x-radius, y-radius, 2*radius, 2*radius);
 	}
+
+
+	@Override
+	public int compareTo(EarthquakeMarker marker) {
+		// TODO Auto-generated method stub
+		float mag1 = this.getMagnitude();
+		float mag2 = marker.getMagnitude();
+		int result = 0;
+		if (mag1 == mag2) {
+			result = 0;
+		}
+		if (mag1 > mag2){
+			result = 1;
+		}
+		if (mag1 < mag2){
+			result = -1;
+		}
+		return result;
+	}
 	
 
 	

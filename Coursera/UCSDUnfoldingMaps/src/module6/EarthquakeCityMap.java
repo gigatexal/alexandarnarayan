@@ -1,8 +1,7 @@
 package module6;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
+import java.awt.Component;
+import java.util.*;
 
 import de.fhpotsdam.unfolding.UnfoldingMap;
 import de.fhpotsdam.unfolding.data.Feature;
@@ -21,7 +20,7 @@ import processing.core.PApplet;
 /** EarthquakeCityMap
  * An application with an interactive map displaying earthquake data.
  * Author: UC San Diego Intermediate Software Development MOOC team
- * @author Your name here
+ * @author Alexandar Narayan
  * Date: July 17, 2015
  * */
 public class EarthquakeCityMap extends PApplet {
@@ -68,6 +67,7 @@ public class EarthquakeCityMap extends PApplet {
 	public void setup() {		
 		// (1) Initializing canvas and map tiles
 		size(900, 700, OPENGL);
+		
 		if (offline) {
 		    map = new UnfoldingMap(this, 200, 50, 650, 600, new MBTilesMapProvider(mbTilesString));
 		    earthquakesURL = "2.5_week.atom";  // The same feed, but saved August 7, 2015
@@ -106,17 +106,20 @@ public class EarthquakeCityMap extends PApplet {
 	    
 	    for(PointFeature feature : earthquakes) {
 		  //check if LandQuake
+	    	
 		  if(isLand(feature)) {
 		    quakeMarkers.add(new LandQuakeMarker(feature));
 		  }
 		  // OceanQuakes
 		  else {
 		    quakeMarkers.add(new OceanQuakeMarker(feature));
+		  
 		  }
 	    }
 
 	    // could be used for debugging
 	    printQuakes();
+	    printAllQuakes();
 	 		
 	    // (3) Add markers to map
 	    //     NOTE: Country markers are not added to the map.  They are used
@@ -344,6 +347,28 @@ public class EarthquakeCityMap extends PApplet {
 		
 		// not inside any country
 		return false;
+	}
+	private void printAllQuakes(){
+		//System.out.println(((Component) quakeMarkers).getName());
+		/*
+		 * for (Marker marker : quakeMarkers)
+			{
+				EarthquakeMarker eqMarker = (EarthquakeMarker)marker;
+		 */
+		 ArrayList<EarthquakeMarker> quakes = new ArrayList<EarthquakeMarker>();
+		 for (Marker marker: quakeMarkers) { //this is ugly, anyone know how to fix this?
+			 EarthquakeMarker eqMarker = (EarthquakeMarker)marker;
+			 quakes.add(eqMarker);
+			 
+		 }
+		 for (EarthquakeMarker m: quakes){
+			 System.out.println(m);
+		 }
+		 Collections.sort(quakes);
+		 System.out.println("Sorted below ----------------");
+		 for (EarthquakeMarker m: quakes){
+			 System.out.println(m);
+		 }
 	}
 	
 	// prints countries with number of earthquakes
