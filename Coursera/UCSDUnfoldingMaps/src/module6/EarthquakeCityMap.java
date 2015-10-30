@@ -16,6 +16,7 @@ import de.fhpotsdam.unfolding.providers.MBTilesMapProvider;
 import de.fhpotsdam.unfolding.utils.MapUtils;
 import parsing.ParseFeed;
 import processing.core.PApplet;
+import java.math.*;
 
 /** EarthquakeCityMap
  * An application with an interactive map displaying earthquake data.
@@ -44,6 +45,7 @@ public class EarthquakeCityMap extends PApplet {
 
 	//feed with magnitude 2.5+ Earthquakes
 	private String earthquakesURL = "http://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/2.5_week.atom";
+	//private String earthquakesURL = "../data/test1.atom";//to test the sorting
 	
 	// The files containing city names and info and country names and info
 	private String cityFile = "city-data.json";
@@ -85,7 +87,7 @@ public class EarthquakeCityMap extends PApplet {
 		//earthquakesURL = "test2.atom";
 		
 		// Uncomment this line to take the quiz
-		//earthquakesURL = "quiz2.atom";
+		earthquakesURL = "quiz2.atom";
 		
 		
 		// (2) Reading in earthquake data and geometric properties
@@ -118,16 +120,17 @@ public class EarthquakeCityMap extends PApplet {
 	    }
 
 	    // could be used for debugging
-	    printQuakes();
-	    printAllQuakes();
+	    //printQuakes();
+	    //printAllQuakes();
 	 		
 	    // (3) Add markers to map
 	    //     NOTE: Country markers are not added to the map.  They are used
 	    //           for their geometric properties
 	    map.addMarkers(quakeMarkers);
 	    map.addMarkers(cityMarkers);
-	    
-	    
+	    //sortAndPrint(10);
+	    System.out.println(getMaxMagnitude());
+	    System.out.println(getMinMagnitude());
 	}  // End setup
 	
 	
@@ -135,14 +138,38 @@ public class EarthquakeCityMap extends PApplet {
 		background(0);
 		map.draw();
 		addKey();
-		
+		statsKey();
 	}
 	
 	
 	// TODO: Add the method:
 	//   private void sortAndPrint(int numToPrint)
 	// and then call that method from setUp
+	private void sortAndPrint(int numToPrint){
+		ArrayList<EarthquakeMarker> quakes = new ArrayList<EarthquakeMarker>();
+		 for (Marker marker: quakeMarkers) { //this is ugly, anyone know how to fix this? ugly in that i have to loop through
+			 //an arraylist of markers just to add them to an arraylist of type earthquakemarker, it'd 
+			 //be nice to just be able to cast to it but i don't think i can
+			 EarthquakeMarker eqMarker = (EarthquakeMarker)marker;
+			 quakes.add(eqMarker);
+			 Collections.sort(quakes);
+			 
+			// EarthquakeMarker[] b = null;
+			//EarthquakeMarker[] quakesArray = quakes.toArray(b);
+			
+			 
+		 }
+		if (numToPrint > quakes.size()) { numToPrint = quakes.size();}
+		//System.out.println(quakes.subList(0, numToPrint).toString().split(","));
+		EarthquakeMarker[] quakes_arr = new EarthquakeMarker[quakes.size()];
+		quakes_arr = quakes.toArray(quakes_arr);
+		System.out.println("---Printing from SortAndPrint-----");
+		for (int i = 0; i < numToPrint; i++){
+			System.out.println(quakes_arr[i]);
+			
+		}
 	
+	}
 	/** Event handler that gets called automatically when the 
 	 * mouse moves.
 	 */
@@ -329,7 +356,92 @@ public class EarthquakeCityMap extends PApplet {
 		
 	}
 
-	
+	private void statsKey() {	
+		// Remember you can use Processing's graphics methods here
+		fill(255, 250, 240);
+		
+		int xbase = 25;
+		int ybase = 400;
+		
+		rect(xbase, ybase, 150, 250);
+		
+		fill(0);
+		textAlign(LEFT, CENTER);
+		textSize(12);
+		text("Averages", xbase+25, ybase+25);
+		
+		fill(150, 30, 30);
+		/*int tri_xbase = xbase + 35;
+		int tri_ybase = ybase + 50;
+		triangle(tri_xbase, tri_ybase-CityMarker.TRI_SIZE, tri_xbase-CityMarker.TRI_SIZE, 
+				tri_ybase+CityMarker.TRI_SIZE, tri_xbase+CityMarker.TRI_SIZE, 
+				tri_ybase+CityMarker.TRI_SIZE);*/
+
+		fill(0, 0, 0);
+		textAlign(LEFT, CENTER);
+		/*text("City Marker", tri_xbase + 15, tri_ybase);
+		
+		text("Land Quake", xbase+50, ybase+70);*/
+		text("Avg:"+ Math.round(getAvgMagnitude().getAsDouble()), xbase+50, ybase+45);
+		/*text("Size ~ Magnitude", xbase+25, ybase+110);
+		
+		fill(255, 255, 255);*/
+		/*ellipse(xbase+35, 
+				ybase+70, 
+				10, 
+				10);*/
+		rect(xbase+35-5, ybase+45-5, 10, 10);
+		
+		text("Max:"+getMaxMagnitude(), xbase+50, ybase+60);
+		/*text("Size ~ Magnitude", xbase+25, ybase+110);
+		
+		fill(255, 255, 255);*/
+		/*ellipse(xbase+35, 
+				ybase+70, 
+				10, 
+				10);*/
+		rect(xbase+35-5, ybase+60-5, 10, 10);
+		
+		text("Min:"+ getMinMagnitude(), xbase+50, ybase+75);
+		/*text("Size ~ Magnitude", xbase+25, ybase+110);
+		
+		fill(255, 255, 255);*/
+		/*ellipse(xbase+35, 
+				ybase+70, 
+				10, 
+				10);*/
+		rect(xbase+35-5, ybase+75-5, 10, 10);
+		
+
+		/*fill(color(255, 255, 0));
+		ellipse(xbase+35, ybase+140, 12, 12);
+		fill(color(0, 0, 255));
+		ellipse(xbase+35, ybase+160, 12, 12);
+		fill(color(255, 0, 0));
+		ellipse(xbase+35, ybase+180, 12, 12);
+		
+		textAlign(LEFT, CENTER);
+		fill(0, 0, 0);
+		text("Shallow", xbase+50, ybase+140);
+		text("Intermediate", xbase+50, ybase+160);
+		text("Deep", xbase+50, ybase+180);
+
+		text("Past hour", xbase+50, ybase+200);
+		
+		fill(255, 255, 255);
+		
+		ellipse(centerx, centery, 12, 12);*/
+		
+		/*int centerx = xbase+35;
+		int centery = ybase+200;
+
+		strokeWeight(2);
+		line(centerx-8, centery-8, centerx+8, centery+8);
+		line(centerx-8, centery+8, centerx+8, centery-8);
+		*/
+		
+		
+	}
 	
 	// Checks whether this quake occurred on land.  If it did, it sets the 
 	// "country" property of its PointFeature to the country where it occurred
@@ -348,6 +460,86 @@ public class EarthquakeCityMap extends PApplet {
 		// not inside any country
 		return false;
 	}
+	private float getMaxMagnitude(){
+		
+			//System.out.println(((Component) quakeMarkers).getName());
+			/*
+			 * for (Marker marker : quakeMarkers)
+				{
+					EarthquakeMarker eqMarker = (EarthquakeMarker)marker;
+			 */
+			 ArrayList<EarthquakeMarker> quakes = new ArrayList<EarthquakeMarker>();
+			 for (Marker marker: quakeMarkers) { //this is ugly, anyone know how to fix this?
+				 EarthquakeMarker eqMarker = (EarthquakeMarker)marker;
+				 quakes.add(eqMarker); 
+			 }
+
+			 Collections.sort(quakes);
+			 float currMagnitude = 0;
+			 float prevMagnitude = 0;
+			 for (EarthquakeMarker q: quakes){
+				 prevMagnitude = currMagnitude;
+				 currMagnitude = q.getMagnitude();
+				 if (currMagnitude <= prevMagnitude){
+					 break;
+				 }
+			
+			 }
+			 return currMagnitude;
+	}
+	
+	
+	private float getMinMagnitude(){
+		
+		//System.out.println(((Component) quakeMarkers).getName());
+		/*
+		 * for (Marker marker : quakeMarkers)
+			{
+				EarthquakeMarker eqMarker = (EarthquakeMarker)marker;
+		 */
+		 ArrayList<EarthquakeMarker> quakes = new ArrayList<EarthquakeMarker>();
+		 for (Marker marker: quakeMarkers) { //this is ugly, anyone know how to fix this?
+			 EarthquakeMarker eqMarker = (EarthquakeMarker)marker;
+			 quakes.add(eqMarker); 
+		 }
+
+		 Collections.sort(quakes);
+		
+		 
+		
+		 
+		 return quakes.stream().filter(p -> p.getMagnitude() > 0 && p.getMagnitude() < .2).findFirst().get().getMagnitude();
+}
+	
+	
+	private OptionalDouble getAvgMagnitude(){
+		
+		//System.out.println(((Component) quakeMarkers).getName());
+		/*
+		 * for (Marker marker : quakeMarkers)
+			{
+				EarthquakeMarker eqMarker = (EarthquakeMarker)marker;
+		 */
+		 ArrayList<EarthquakeMarker> quakes = new ArrayList<EarthquakeMarker>();
+		 for (Marker marker: quakeMarkers) { //this is ugly, anyone know how to fix this?
+			 EarthquakeMarker eqMarker = (EarthquakeMarker)marker;
+			 quakes.add(eqMarker); 
+		 }
+
+		 Collections.sort(quakes);
+
+		 
+		 OptionalDouble average = quakes
+				    .stream()
+				    .filter(p -> p.getMagnitude() > 0 && p.getMagnitude() <=10)
+				    .mapToDouble(p -> p.getMagnitude())
+		            .average();
+		 
+	
+	return average;
+	
+	}
+	
 	private void printAllQuakes(){
 		//System.out.println(((Component) quakeMarkers).getName());
 		/*
@@ -358,17 +550,18 @@ public class EarthquakeCityMap extends PApplet {
 		 ArrayList<EarthquakeMarker> quakes = new ArrayList<EarthquakeMarker>();
 		 for (Marker marker: quakeMarkers) { //this is ugly, anyone know how to fix this?
 			 EarthquakeMarker eqMarker = (EarthquakeMarker)marker;
-			 quakes.add(eqMarker);
+			 quakes.add(eqMarker); 
+		 }
+
+		 Collections.sort(quakes);
+		 
+		 System.out.println("Sorted below ----------------");
+		 
+		 for (EarthquakeMarker m: quakes){
+			 System.out.println(m);
 			 
 		 }
-		 for (EarthquakeMarker m: quakes){
-			 System.out.println(m);
-		 }
-		 Collections.sort(quakes);
-		 System.out.println("Sorted below ----------------");
-		 for (EarthquakeMarker m: quakes){
-			 System.out.println(m);
-		 }
+		 
 	}
 	
 	// prints countries with number of earthquakes

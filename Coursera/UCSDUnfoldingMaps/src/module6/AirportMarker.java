@@ -4,6 +4,7 @@ import java.util.List;
 
 import de.fhpotsdam.unfolding.data.Feature;
 import de.fhpotsdam.unfolding.data.PointFeature;
+import de.fhpotsdam.unfolding.geo.Location;
 import de.fhpotsdam.unfolding.marker.SimpleLinesMarker;
 import processing.core.PGraphics;
 
@@ -13,6 +14,10 @@ import processing.core.PGraphics;
  * @author Adam Setters and the UC San Diego Intermediate Software Development
  * MOOC team
  *
+ */
+
+/*
+ * map2.zoomAndPanTo(zoomLevel, new Location(45.58f,-122.73f));
  */
 public class AirportMarker extends CommonMarker {
 	public static List<SimpleLinesMarker> routes;

@@ -58,18 +58,20 @@ public abstract class EarthquakeMarker extends CommonMarker implements Comparabl
 	// TODO: Add the method:
 	public int compareTo(EarthquakeMarker marker) //in reverse order of magnitude
 	{
+
 		float mag1 = this.getMagnitude();
 		float mag2 = marker.getMagnitude();
 		int result = 0;
-		if (mag1 == mag2) {
-			result = 0;
-		}
-		if (mag1 > mag2){
+		if (mag1 < mag2){
 			result = 1;
 		}
-		if (mag1 < mag2){
+		else if (mag1 > mag2){
 			result = -1;
 		}
+		else {
+			result = 0;
+		}
+		
 		return result;
 	}
 	

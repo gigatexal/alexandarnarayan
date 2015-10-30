@@ -1,0 +1,66 @@
+/**
+ * 
+ */
+package main;
+import java.util.regex.*;
+import java.util.*;
+
+
+
+/**
+ * @author gigatexal
+ *
+ */
+public class Main {
+
+	/**
+	 * 
+	 */
+	public Main() {
+		// TODO Auto-generated constructor stub
+	}
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		System.out.println("Hello World");
+		
+		String str = new String("Splitting a string, it's as easy as 1 2 33!  Right?");
+		
+		 String a = str.chars().distinct().toString();
+		
+		 System.out.println((char)a);		
+
+	}
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

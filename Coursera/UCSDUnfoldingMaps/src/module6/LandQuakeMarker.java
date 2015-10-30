@@ -43,19 +43,21 @@ public class LandQuakeMarker extends EarthquakeMarker {
 	@Override
 	public int compareTo(EarthquakeMarker marker) {
 		// TODO Auto-generated method stub
+
 		float mag1 = this.getMagnitude();
 		float mag2 = marker.getMagnitude();
 		int result = 0;
-		if (mag1 == mag2) {
-			result = 0;
-		}
-		if (mag1 > mag2){
+		if (mag1 < mag2){
 			result = 1;
 		}
-		if (mag1 < mag2){
+		else if (mag1 > mag2){
 			result = -1;
 		}
+		else {
+			result = 0;
+		}
+		
 		return result;
 	}
-		
 }
+		

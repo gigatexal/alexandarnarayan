@@ -1,0 +1,45 @@
+/**
+ * 
+ */
+package main;
+
+/**
+ * @author gigatexal
+ *
+ */
+public class Main {
+
+	/**
+	 * 
+	 */
+	public Main() {
+		// TODO Auto-generated constructor stub
+	}
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		System.out.println("Hello World");
+
+	}
+
+}
+
+class Humans{
+	private boolean alive = true;
+	private boolean hasSpirit = true;
+	private String firstName = null;
+	private String lastName = null;
+	private int iq = 0;
+	
+	
+	
+	
+	
+	public Humans(){
+		super();
+	}
+	
+}

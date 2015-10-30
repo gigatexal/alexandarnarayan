@@ -1,0 +1,67 @@
+/**
+ * 
+ */
+package main;
+import java.util.regex.*;
+
+import javax.xml.stream.events.Characters;
+
+import java.util.*;
+
+
+
+/**
+ * @author gigatexal
+ *
+ */
+public class Main {
+
+	/**
+	 * 
+	 */
+	public Main() {
+		// TODO Auto-generated constructor stub
+	}
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		String str = new String("This   string has  three and two spaces 1 2 33");
+		
+		System.out.println(str);
+		String[] strArr = str.trim().split(" +");
+		 
+	}
+	
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
