@@ -43,9 +43,7 @@ public class BasicDocument extends Document
 	 */
 	@Override
 	public int getNumSentences()
-	//String[] strings = str.split("(?<=[.?!])\\s+(?=[a-zA-Z])"); \\sentences
 	{
-		
 	    //TODO: Implement this method.  See the Module 1 support videos 
         // if you need help.
         return 0;
@@ -72,8 +70,7 @@ public class BasicDocument extends Document
 	 * You are encouraged to add your own tests.  */
 	public static void main(String[] args)
 	/*
-	 * String[] strArr = str.trim().split("( )+|(\\.)+|(\\!)+|([0-9])+|(\\:)+|(\\;)+|(\\...)+");\\words in a sentence
-	 * String[] strings = str.split("(?<=[.?!])\\s+(?=[a-zA-Z])"); \\sentences
+	 * String[] strArr = str.trim().split("( )+|(\\.)+|(\\!)+|([0-9])+|(\\:)+|(\\;)+|(\\...)+");
 	 */
 	{
 		testCase(new BasicDocument("This is a test.  How many???  "

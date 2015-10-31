@@ -1176,3 +1176,32 @@ org.eclipse.core.runtime.CoreException: Launch configuration Main references clo
 	at org.eclipse.m2e.core.internal.embedder.MavenImpl.execute(MavenImpl.java:1355) [org.eclipse.m2e.core_1.6.0.20150526-2032.jar:na]
 	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryRefreshJob.run(ProjectRegistryRefreshJob.java:81) [org.eclipse.m2e.core_1.6.0.20150526-2032.jar:na]
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55) [org.eclipse.core.jobs_3.7.0.v20150330-2103.jar:na]
+2015-10-30 20:15:35,663 [Worker-55] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: 1:1:0.0.1-SNAPSHOT @ /Users/gigatexal/Code/alexandarnarayan/Tinkering/1/pom.xml.
+2015-10-30 20:15:36,650 [Worker-49] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2015-10-30 20:15:36,650 [Worker-49] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/gigatexal/Code/alexandarnarayan/Tinkering/1/src/main/resources
+2015-10-30 20:15:36,651 [Worker-49] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2015-10-30 20:15:36,651 [Worker-49] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/gigatexal/Code/alexandarnarayan/Tinkering/1/src/test/resources
+2015-10-30 20:16:36,289 [Worker-57] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2015-10-30 20:16:36,289 [Worker-57] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/gigatexal/Code/alexandarnarayan/Tinkering/1/src/main/resources
+2015-10-30 20:16:36,289 [Worker-57] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2015-10-30 20:16:36,289 [Worker-57] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/gigatexal/Code/alexandarnarayan/Tinkering/1/src/test/resources
+2015-10-30 20:16:51,279 [Worker-45] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2015-10-30 20:16:51,279 [Worker-45] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/gigatexal/Code/alexandarnarayan/Tinkering/1/src/main/resources
+2015-10-30 20:16:51,281 [Worker-45] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2015-10-30 20:16:51,281 [Worker-45] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/gigatexal/Code/alexandarnarayan/Tinkering/1/src/test/resources
+2015-10-30 20:18:39,300 [Worker-45] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2015-10-30 20:18:39,301 [Worker-45] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/gigatexal/Code/alexandarnarayan/Tinkering/1/src/main/resources
+2015-10-30 20:18:39,301 [Worker-45] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2015-10-30 20:18:39,301 [Worker-45] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/gigatexal/Code/alexandarnarayan/Tinkering/1/src/test/resources
+2015-10-30 20:19:22,852 [Worker-58] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2015-10-30 20:19:22,852 [Worker-58] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/gigatexal/Code/alexandarnarayan/Tinkering/1/src/main/resources
+2015-10-30 20:19:22,852 [Worker-58] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2015-10-30 20:19:22,852 [Worker-58] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/gigatexal/Code/alexandarnarayan/Tinkering/1/src/test/resources
+2015-10-30 20:19:28,505 [Worker-55] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2015-10-30 20:19:28,505 [Worker-55] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/gigatexal/Code/alexandarnarayan/Tinkering/1/src/main/resources
+2015-10-30 20:19:28,506 [Worker-55] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2015-10-30 20:19:28,506 [Worker-55] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/gigatexal/Code/alexandarnarayan/Tinkering/1/src/test/resources
+2015-10-30 20:19:54,506 [Worker-60] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2015-10-30 20:19:54,507 [Worker-60] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/gigatexal/Code/alexandarnarayan/Tinkering/1/src/main/resources
+2015-10-30 20:19:54,507 [Worker-60] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2015-10-30 20:19:54,507 [Worker-60] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/gigatexal/Code/alexandarnarayan/Tinkering/1/src/test/resources
