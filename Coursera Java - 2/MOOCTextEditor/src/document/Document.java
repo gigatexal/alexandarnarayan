@@ -8,6 +8,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
+import java.math.*;
 
 
 public abstract class Document {
@@ -50,7 +51,14 @@ public abstract class Document {
 	// here.  The reason we put countSyllables here because we'll use it again
 	// next week when we implement the EfficientDocument class.
 	protected int countSyllables(String word)
-	{
+	{	/**
+		 * Get the number of sentences in the document.
+		 * Words are defined as above.  Syllables are defined as:
+		 * a contiguous sequence of vowels, except for an "e" at the 
+		 * end of a word if the word has another set of contiguous vowels, 
+		 * makes up one syllable.   y is considered a vowel.
+		 * @return The number of syllables in the document.
+		 */
 		// TODO: Implement this method so that you can call it from the 
 	    // getNumSyllables method in BasicDocument (module 1) and 
 	    // EfficientDocument (module 2).
@@ -117,8 +125,21 @@ public abstract class Document {
 	/** return the Flesch readability score of this document */
 	public double getFleschScore()
 	{
-	    // TODO: Implement this method
-	    return 0.0;
+	    double first = 206.835;
+	    double second = 1.015;
+	    double third = 84.6;
+	    
+	    double words = (double)getNumWords();
+	    double sentences = (double)getNumSentences();
+	    double syllables = (double)getNumSyllables();
+	    
+	    double result = first - (second * (words/sentences)) - (third * (syllables/words));
+	    
+	    //result = Math.round((result * 10) / 10);
+	   //System.out.println(result);
+	   return result;
+	
+	
 	}
 	
 	

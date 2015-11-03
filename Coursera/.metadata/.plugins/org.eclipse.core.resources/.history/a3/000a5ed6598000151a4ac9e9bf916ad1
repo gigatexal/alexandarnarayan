@@ -1,0 +1,32 @@
+package document;
+
+public class Quiz extends Document{
+
+	public Quiz(String text) {
+		// TODO Auto-generated constructor stub
+		super(text);
+	}
+	public static void main(String[] args){
+		String text = "My ";
+		String s2 = "String";
+		text = text + s2;
+	}
+	@Override
+	public int getNumWords() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	@Override
+	public int getNumSentences() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	@Override
+	public int getNumSyllables() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+	
+}

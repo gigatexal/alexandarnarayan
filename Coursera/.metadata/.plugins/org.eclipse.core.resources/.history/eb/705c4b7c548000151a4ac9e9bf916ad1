@@ -1,0 +1,39 @@
+/**
+ * 
+ */
+package main;
+
+/**
+ * @author gigatexal
+ *
+ */
+public class Main {
+
+	/**
+	 * 
+	 */
+	public Main() {
+		// TODO Auto-generated constructor stub
+	}
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		/*String str = "This is a test of the string.   this is another sentence. this. does. work. you. know.      This is the last sentence";		
+				
+				
+		String[] strings = str.split("(?<=[.?!])\\s+(?=[a-zA-Z])");
+		
+		for (String s: strings){ System.out.println(s); }
+		*/
+		String text = new String("My ");
+		System.out.println(text + new String("String"));
+		text.concat("String");
+		String s2 = "String";
+		String s3 = "My";
+		System.out.println(text);
+		
+	}
+
+}

@@ -11,7 +11,10 @@ public class BasicDocument extends Document
 	/** Create a new BasicDocument object
 	 * 
 	 * @param text The full text of the Document.
+	 * 
 	 */
+	
+	
 	public BasicDocument(String text)
 	{
 		super(text);
@@ -28,9 +31,16 @@ public class BasicDocument extends Document
 	@Override
 	public int getNumWords()
 	{
+		
 		//TODO: Implement this method.  See the Module 1 support videos 
 	    // if you need help.
-	    return 0;
+		if (this.getText().isEmpty()){
+			return 0;
+		}
+		else {
+		return this.getText().split("[(( )|(.)|(,)|(!)|(0-9))]+").length;
+		}
+	    //return this.getText().split("( )+|(\\.)+|(\\!)+|([0-9])+|(\\:)+|(\\;)+|(\\...)+").length;
 	}
 	
 	/**
@@ -48,7 +58,13 @@ public class BasicDocument extends Document
 		
 	    //TODO: Implement this method.  See the Module 1 support videos 
         // if you need help.
-        return 0;
+        //return this.getText().split("(?<=[.?!])\\s+(?=[a-zA-Z])").length;
+		if (this.getText().isEmpty()){
+			return 0;
+		}
+		else {
+		return this.getText().split("[.?!]+").length;
+		}
 	}
 	
 	/**
@@ -61,10 +77,25 @@ public class BasicDocument extends Document
 	 */
 	@Override
 	public int getNumSyllables()
-	{
+	{	//aeiouy
+		//if end of a word
 	    //TODO: Implement this method.  See the Module 1 support videos 
         // if you need help.
-        return 0;
+		if (this.getText().isEmpty()) 
+			{ 
+				return 0; 
+			}
+		else if (this.getText().length() <=2){
+			return 1;
+		}
+		else {
+		
+			//return this.getText().split("[\b^aiouyeAIOUYE]+\\w").length;
+			//return this.getText().split("[aeiouy]+[^e]+\\w").length;
+			
+			//return this.getText().split("([aeiouyAEIOUY])+|([eE$]+)").length;
+			return this.getText().split("([aeiouyAEIOUY])+|([(^aeiouy)eEsS$])").length;
+		}
 	}
 	
 	
@@ -76,13 +107,89 @@ public class BasicDocument extends Document
 	 * String[] strings = str.split("(?<=[.?!])\\s+(?=[a-zA-Z])"); \\sentences
 	 */
 	{
+		
+		
+		
 		testCase(new BasicDocument("This is a test.  How many???  "
 		        + "Senteeeeeeeeeences are here... there should be 5!  Right?"),
 				16, 13, 5);
+		
 		testCase(new BasicDocument(""), 0, 0, 0);
 		testCase(new BasicDocument("sentence, with, lots, of, commas.!  "
 		        + "(And some poaren)).  The output is: 7.5."), 15, 11, 4);
-		testCase(new BasicDocument("many???  Senteeeeeeeeeences are"), 6, 3, 2);		
+		testCase(new BasicDocument("many???  Senteeeeeeeeeences are"), 6, 3, 2);
+		
+		testCase(new BasicDocument("voluptua"), 3, 1, 1);
+
+		testCase(new BasicDocument("segue"), 2, 1, 1);
+
+		testCase(new BasicDocument("double"), 1, 1, 1);
+
+		testCase(new BasicDocument("battle"), 1, 1, 1);
+
+		testCase(new BasicDocument("here"), 1, 1, 1);
+
+		testCase(new BasicDocument("more"), 1, 1, 1);
+
+		testCase(new BasicDocument("sentence"), 2, 1, 1);
+
+		testCase(new BasicDocument("sentences"), 3, 1, 1);
+
+		testCase(new BasicDocument("redouble"), 2, 1, 1);
+
+		testCase(new BasicDocument("Prologue"), 3, 1, 1);
+
+		testCase(new BasicDocument("sentence."), 2, 1, 1);
+
+		testCase(new BasicDocument("Any"), 2, 1, 1);
+
+		testCase(new BasicDocument("Anym"), 2, 1, 1);
+
+		testCase(new BasicDocument("eos"), 1, 1, 1);
+
+		testCase(new BasicDocument("mei"), 1, 1, 1);
+
+		testCase(new BasicDocument("Mea"), 1, 1, 1);
+
+		testCase(new BasicDocument("quo"), 1, 1, 1);
+
+		testCase(new BasicDocument("threeeeeeeeeeeeeeeeeeeeeeeeee"), 1, 1, 1);
+
+		testCase(new BasicDocument("be"), 1, 1, 1);
+
+		testCase(new BasicDocument("I"), 1, 1, 1);
+
+		testCase(new BasicDocument("oooooooooooooooooooooother"), 2, 1, 1);
+
+		testCase(new BasicDocument("This"), 1, 1, 1);
+
+		testCase(new BasicDocument("is"), 1, 1, 1);
+
+		testCase(new BasicDocument("test"), 1, 1, 1);
+
+		testCase(new BasicDocument("number"), 2, 1, 1);
+
+		testCase(new BasicDocument("threeeeeeeeeeeeeeeeeeeeeeeeee"), 1, 1, 1);
+
+		testCase(new BasicDocument("I"), 1, 1, 1);
+
+		testCase(new BasicDocument("can"), 1, 1, 1);
+
+		testCase(new BasicDocument("do"), 1, 1, 1);
+
+		testCase(new BasicDocument("that"), 1, 1, 1);
+
+		testCase(new BasicDocument("with"), 1, 1, 1);
+
+		testCase(new BasicDocument("oooooooooooooooooooooother"), 2, 1, 1);
+
+		testCase(new BasicDocument("letters"), 2, 1, 1);
+
+		testCase(new BasicDocument("tooooooooooo"), 1, 1, 1);
+
+		testCase(new BasicDocument("probably"), 3, 1, 1);
+
+		testCase(new BasicDocument("the"), 1, 1, 1);
 	}
 	
 }

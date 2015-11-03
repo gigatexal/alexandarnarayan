@@ -12,13 +12,14 @@ public class BasicDocumentGrader {
         {
             System.out.println("Sentences, words, and syllables:");
             BufferedReader br = new BufferedReader(new FileReader("test_cases/mod1TestCases.txt"));
+            //BufferedReader br = new BufferedReader(new FileReader("test_cases/mo.txt"));
             String line;
             PrintWriter out = new PrintWriter("grader_output/module1.part1.out", "utf-8");
             while ((line = br.readLine()) != null)
             {
                 BasicDocument doc = new BasicDocument(line);
                 String result = doc.getNumSentences() + " " + doc.getNumWords() + " " + doc.getNumSyllables() + " ";
-                System.out.print(result);
+                System.out.println(result);
                 out.print(result);
             }
             out.print("\n");

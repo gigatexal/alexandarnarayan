@@ -7,4 +7,5 @@
 <fullyQualifiedTypeName name="java.lang.Math"/>
 <fullyQualifiedTypeName name="java.lang.String"/>
 <fullyQualifiedTypeName name="javax.xml.stream.events.Characters"/>
+<fullyQualifiedTypeName name="document.BasicDocument"/>
 </qualifiedTypeNameHistroy>
