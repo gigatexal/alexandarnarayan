@@ -24,6 +24,13 @@ public abstract class Document {
 		this.text = text;
 	}
 	
+	public static double round(double value, int places) {
+	    if (places < 0) throw new IllegalArgumentException();
+
+	    BigDecimal bd = new BigDecimal(value);
+	    bd = bd.setScale(places, RoundingMode.HALF_UP);
+	    return bd.doubleValue();
+	}
 	/** Returns the tokens that match the regex pattern from the document 
 	 * text string.
 	 * @param pattern A regular expression string specifying the 
@@ -137,7 +144,7 @@ public abstract class Document {
 	    
 	    //result = Math.round((result * 10) / 10);
 	   //System.out.println(result);
-	   return result;
+	   return round(result,2);
 	
 	
 	}
