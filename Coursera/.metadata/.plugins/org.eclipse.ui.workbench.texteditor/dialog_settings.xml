@@ -2,12 +2,13 @@
 <section name="Workbench">
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
 		<item value="false" key="isRegEx"/>
-		<item value="" key="selection"/>
+		<item value="myLinkedList" key="selection"/>
 		<item value="false" key="casesensitive"/>
 		<item value="false" key="incremental"/>
 		<item value="true" key="wrap"/>
 		<item value="false" key="wholeword"/>
 		<list key="findhistory">
+			<item value="DoublyLinkedListImpl"/>
 			<item value="document"/>
 			<item value="basicdocument"/>
 			<item value="getavg"/>
@@ -15,9 +16,9 @@
 			<item value="getMaxMagnitude"/>
 			<item value="addkey"/>
 			<item value="click"/>
-			<item value="clicked"/>
 		</list>
 		<list key="replacehistory">
+			<item value="myLinkedList"/>
 		</list>
 	</section>
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog_dialogBounds">

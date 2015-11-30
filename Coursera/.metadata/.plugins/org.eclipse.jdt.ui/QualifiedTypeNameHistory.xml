@@ -8,4 +8,5 @@
 <fullyQualifiedTypeName name="javax.xml.stream.events.Characters"/>
 <fullyQualifiedTypeName name="java.lang.Math"/>
 <fullyQualifiedTypeName name="document.BasicDocument"/>
+<fullyQualifiedTypeName name="myLinkedList.Node"/>
 </qualifiedTypeNameHistroy>

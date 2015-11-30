@@ -1,0 +1,8 @@
+
+public class myLinkedList {
+
+	public myLinkedList() {
+		// TODO Auto-generated constructor stub
+	}
+
+}

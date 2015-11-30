@@ -22,17 +22,13 @@ public class Main {
 	 * @param args
 	 */
 	public static void main(String[] args) {
-		
+		myLinkedList<Integer> l = new myLinkedList<Integer>();
+		l.addFirst(1);
+		l.iterateForward();
 		
 	}
 	
 }
 
-class linkedNode<E> {
-	private E data; 
-	private linkedNode nextNode = new linkedNode();
+
 	
-	public linkedNode(){
-		super();
-	}
-}
