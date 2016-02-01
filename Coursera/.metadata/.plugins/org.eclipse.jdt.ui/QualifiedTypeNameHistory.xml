@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+<fullyQualifiedTypeName name="java.awt.Image"/>
+<fullyQualifiedTypeName name="de.fhpotsdam.unfolding.geo.Location"/>
+<fullyQualifiedTypeName name="de.fhpotsdam.unfolding.marker.SimplePointMarker"/>
+<fullyQualifiedTypeName name="java.util.Collections"/>
+<fullyQualifiedTypeName name="java.lang.String"/>
+<fullyQualifiedTypeName name="javax.xml.stream.events.Characters"/>
+<fullyQualifiedTypeName name="java.lang.Math"/>
+<fullyQualifiedTypeName name="document.BasicDocument"/>
+<fullyQualifiedTypeName name="myLinkedList.Node"/>
+</qualifiedTypeNameHistroy>

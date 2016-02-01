@@ -1,0 +1,29 @@
+/**
+ * 
+ */
+package main;
+import java.util.*;
+import java.*;
+
+/**
+ * @author gigatexal
+ *
+ */
+public class Main {
+
+	/**
+	 * 
+	 */
+	public Main() {
+		// TODO Auto-generated constructor stub
+	}
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		Random rnd = new Random();
+		int avg = rnd.ints().parallel().limit(1000000).filter(e -> e>=0).sum()/1000000;
+		
+	}
+}

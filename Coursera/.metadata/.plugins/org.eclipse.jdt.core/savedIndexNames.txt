@@ -1,0 +1,5 @@
+INDEX VERSION 1.127+/Users/gigatexal/Code/alexandarnarayan/Coursera/.metadata/.plugins/org.eclipse.jdt.core
+4253118690.index
+1049668143.index
+2713287708.index
+3514540884.index

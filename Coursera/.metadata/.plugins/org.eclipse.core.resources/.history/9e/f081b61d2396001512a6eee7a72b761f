@@ -1,0 +1,9 @@
+package textgen;
+
+public class LLTest {
+
+	public LLTest() {
+		// TODO Auto-generated constructor stub
+	}
+
+}

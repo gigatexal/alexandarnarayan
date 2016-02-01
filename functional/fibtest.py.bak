@@ -1,0 +1,16 @@
+def fib():
+    a, b = 0, 1
+    while True:
+        yield a
+        a, b = b, a + b
+
+fibs = fib() #seems to be the only way to get the following line to work is to 
+	     #assign the infinite generator to a variable 
+
+f = [fibs.next() for x in xrange(1001)]
+
+for num in f:
+	print num
+
+
+
